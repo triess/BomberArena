@@ -18,7 +18,7 @@ public class Barrol extends Barrier
     }    
     public void die()
     {
-        if(getOneObjectAtOffset(0,0, Explosion.class) != null)
+        if(isBaroolTouched())
         {
             int x = getX();
             int y = getY();
@@ -36,6 +36,15 @@ public class Barrol extends Barrier
                 getWorld().addObject(new RangeUp(),x,y);
             }
             getWorld().removeObject(this);
+        }
+    }
+	
+    private boolean isBarrolTouched()
+    {
+        if (getOneObjectAtOffset(0,0, Explosion.class) != null) {
+            return true;
+        } else {
+            return false;
         }
     }
 }

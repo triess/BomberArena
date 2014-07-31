@@ -12,6 +12,8 @@ public class ExplosionRed extends Explosion
     private String image;
     public int x;
     public int y;
+    public int timeToStay = 5;
+	
     public ExplosionRed(String imageName)
     {
         image = imageName;
@@ -22,7 +24,7 @@ public class ExplosionRed extends Explosion
     {
         disappear();
     }    
-    public int timeToStay = 5;
+    
     public void disappear()
     {
         timeToStay = timeToStay - 1;

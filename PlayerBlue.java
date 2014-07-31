@@ -12,22 +12,13 @@ public class PlayerBlue extends Player
     private int bombReloadTime = 8;
     private int reloadTimeDelay;
     private int HP = 5;
-    private int range=1;
+    private int range = 1;
     private GreenfootSound fail= new GreenfootSound("failSound.mp3");
     private LebensanzeigeBlue anzeige;
-    public PlayerBlue(LebensanzeigeBlue lebensanzeige)
-    {
-        anzeige = lebensanzeige;
-        WalkingDirection = Greenfoot.getRandomNumber(3)+1;
-    }
-    public void act() 
-    {
-       reloadTimeDelay++;
-       placeBomb();
-       move();
-       managePowerUps();
-        manageHP();
-    }    
+
+    public int x;
+    public int y;
+
     public boolean BarrierLeft1;
     public boolean BarrierRight1;
     public boolean BarrierTop1;
@@ -36,8 +27,25 @@ public class PlayerBlue extends Player
     public boolean BarrierTopLeft;
     public boolean BarrierBottomLeft;
     public boolean BarrierBottomRight;
+
     public int WalkingDirection;
-    
+	
+	
+    public PlayerBlue(LebensanzeigeBlue lebensanzeige)
+    {
+        anzeige = lebensanzeige;
+        WalkingDirection = Greenfoot.getRandomNumber(3)+1;
+    }
+	
+    public void act() 
+    {
+       reloadTimeDelay++;
+       placeBomb();
+       move();
+       managePowerUps();
+       manageHP();
+    }    
+	    
     public void managePowerUps()
     {
         Actor Healpot = this.getOneObjectAtOffset(0,0,Healpot.class);
@@ -99,9 +107,6 @@ public class PlayerBlue extends Player
         }
     }
     
-    
-    public int x;
-    public int y;
     public void manageHP()
     {
         if(getOneObjectAtOffset(0,0,Explosion.class)!= null)

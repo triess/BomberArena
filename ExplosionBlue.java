@@ -3,13 +3,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class ExplosionBlue here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Tim
+ * @version 1.0
  */
 public class ExplosionBlue extends Explosion
 {
     private GreenfootImage image1;
-    private String image;
+	private String image;
+	public int timeToStay = 5;
+	
     public ExplosionBlue(String imageName)
     {
         image = imageName;
@@ -19,8 +21,8 @@ public class ExplosionBlue extends Explosion
     public void act() 
     {
         disappear();
-    }    
-    public int timeToStay = 5;
+    }
+    
     public void disappear()
     {
         timeToStay = timeToStay - 1;
