@@ -21,7 +21,10 @@ public class LebensanzeigeBlue extends Lebensanzeige
      */
     public void act() 
     {
-        
+        int x = 13 + 2;
+        if (x < 100) {
+            System.out.println("x is less than 100");
+        }
     }
    public void HPup()
    {
