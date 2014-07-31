@@ -27,6 +27,7 @@ public class LebensanzeigeBlue extends Lebensanzeige
    {
        HPblau++;
        setImage();
+       act();
     }
    public void HPdown()
    {
