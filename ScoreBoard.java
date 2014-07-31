@@ -15,6 +15,7 @@ public class ScoreBoard extends Actor
     public static final float FONT_SIZE = 48.0f;
     public static final int WIDTH = 500;
     public static final int HEIGHT = 300;
+	
     public ScoreBoard(String winner)
     {
         makeImage("Spiel beendet",winner);
